@@ -29,7 +29,12 @@ cd _includes
 ln -s ../subtle-ads/ads/subtle-ads.html
 ```
 
-4. When updating the ad, I have to pull
+4. Then add the submodule to git by
+```bash
+git add .gitmodules _includes/subtle-ads.html
+```
+
+5. When updating the ad, I have to pull
 the modified submodule (aka this repo) from
 every of the sites I use it in...
 
