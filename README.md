@@ -13,30 +13,28 @@ These ads simply announce the dates of our upcoming public trainings, sometimes 
 
 **Longer answer**:
 
-Git submodule with symlink to the file(s) needed.
+Git submodule as subdirectory of (jekyll standard) `_includes` directory.
 
-1. I created THIS repository to contain the text of the ads, located in the directory '/ads'
+1. I created THIS repository (subtle-ads) to contain the text of the ads
 2. I include this repo (subtle-ads) as submodule in the site
-I need the subtle-ads content in:
-``` bash
-git submodule add https://github.com/arc42/subtle-ads/
-```
-
-3. In the sites' '\includes' folder I add a symlink pointing to this submodule,
-more specifically to `subtle-ads/ads/subtle-ads.html` with the following commands:
+I need the subtle-ads content in `_includes`:
 ``` bash
 cd _includes
-ln -s ../subtle-ads/ads/subtle-ads.html
+git submodule add https://github.com/arc42/subtle-ads/
 ```
 
 4. Then add the submodule to git by
 ```bash
+cd ..
 git add .gitmodules _includes/subtle-ads.html
 ```
 
 5. When updating the ad, I have to pull
 the modified submodule (aka this repo) from
-every of the sites I use it in...
+every of the sites I use it in. Goto the directory containing the site:
+```bash
+git submodule update --remote
+```
 
 5. This concerns (at least) the following arc42 sites:
   * [docs.arc2.org](http://docs.arc42.org) with repository [github.com/arc42/docs.arc42.org-site](https://github.com/arc42/docs.arc42.org-site)
