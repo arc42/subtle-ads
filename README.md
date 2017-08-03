@@ -38,9 +38,10 @@ git submodule update --remote
 
 5. This concerns (at least) the following arc42 sites:
   * [docs.arc2.org](http://docs.arc42.org) with repository [github.com/arc42/docs.arc42.org-site](https://github.com/arc42/docs.arc42.org-site)
-  * faq.arc42.org
-  * arc42.org
-  * patterns.arc42.org
+  * [faq.arc42.org](http://faq.arc42.org) with repository
+  [https://github.com/arc42/faq.arc42.org-site](https://github.com/arc42/faq.arc42.org-site)
+  * [patterns.arc42.org](http://patterns.arc42.org) with repository [https://github.com/arc42/patterns.arc42.org-site](https://github.com/arc42/patterns.arc42.org-site)
+  * [arc42.org](https://github.com/arc42/arc42.org-site)
 
 
 
