@@ -1,7 +1,8 @@
 # subtle-ads
-Contains the common code for subtle advertisements that's included in several of the arc42 websites
+Contains the common code for subtle advertisements that's included in several of the arc42 websites,
+plus Dockerfile so the update can be performed by a Docker container.
 
-## What? Advertisements?
+## What? Advertisements in Open-Source projects?
 Yes - that's right. Gernot and Peter, founders of arc42, make part of their living by training and coaching,
 therefore we include (very subtle, silent, low-voiced, unobtrusive) ads in the arc42 websites.
 
@@ -9,11 +10,12 @@ These ads simply announce the dates of our upcoming public trainings, sometimes 
 
 ## How does it work?
 
-**Short answer**: Via [git submodules](https://git-scm.com/docs/git-submodule).
+**Short answer**: Via [git submodules](https://git-scm.com/docs/git-submodule)
+and a custom Docker container.
 
-**Longer answer**:
+#### Longer answer - part 1: Git Submodule:
 
-Git submodule as subdirectory of (jekyll standard) `_includes` directory.
+###### Create Git submodule as subdirectory of (jekyll standard) `_includes` directory.
 
 1. I created THIS repository (subtle-ads) to contain the text of the ads
 2. I include this repo (subtle-ads) as submodule in the site
@@ -31,12 +33,54 @@ git add .gitmodules _includes/subtle-ads.html
 
 5. When updating the ad, I have to pull
 the modified submodule (aka this repo) from
-every of the sites I use it in. Goto the directory containing the site:
+every of the sites I use it in. That's actually done by the Docker container...
+In case you need to do it manually: Goto the directory containing the site:
 ```bash
 git submodule update --remote
+git add .
+git commit -m "updated submodule"
+git push
+```
+#### Longer answer - part 2: Docker container
+
+I defined a container based upon Alpine linux
+(see `Dockerfile` in this repo):
+
+'''Docker
+FROM alpine:3.6
+
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh
+'''
+
+In short:
+* Alpine 3.6 based container
+* Installs git
+
+1. Building the container:
+```
+docker build --tag arc42-ads:auto .
 ```
 
-5. This concerns (at least) the following arc42 sites:
+2. Running the container:
+```
+docker run --interactive --tty arc42-ads:auto
+```
+
+The container needs to run in interactive mode,
+as it prompts for a github username and
+credentials. In case of 2-factor-auth,
+you need to provide your personal access token,
+otherwise your password will suffice.
+
+3. What the container does...
+is pretty simple: read the script
+`update-submodules-in-container.sh`,
+you'll understand.
+
+### Concerned arc42 Repositories
+
+Updating ads concerns (at least) the following arc42 sites:
   * [docs.arc2.org](http://docs.arc42.org) with repository [github.com/arc42/docs.arc42.org-site](https://github.com/arc42/docs.arc42.org-site)
   * [faq.arc42.org](http://faq.arc42.org) with repository
   [https://github.com/arc42/faq.arc42.org-site](https://github.com/arc42/faq.arc42.org-site)
