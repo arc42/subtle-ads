@@ -25,4 +25,4 @@ RUN git config --global user.name "Dr. Gernot Starke (via Docker)"
 # in case interactive sessions will be used, set decent prompt
 RUN export PS1='$(whoami)@$(hostname):$(pwd)'
 
-#CMD ["./update-subtle-ads.sh"]
+CMD ["./update-subtle-ads.sh"]
