@@ -15,15 +15,14 @@ LABEL description="updates subtle-ads on arc42 websites: \
 (3) commit and push, which\
 (4) initiates re-generation of github-pages."
 
-COPY update-subtle-ads.sh /update-subtle-ads.sh
-RUN chmod +x /update-subtle-ads.sh
+COPY update-submodules-in-container.sh /update-submodules-in-container.sh
+RUN chmod +x /update-submodules-in-container.sh
 
 # ensure git actions are attributed
 RUN git config --global user.email "gs@gernotstarke.de"
 RUN git config --global user.name "Dr. Gernot Starke (via Docker)"
 
 # in case interactive sessions will be used, set decent prompt
-RUN export PS1='$(whoami)@$(hostname):$(pwd)'
+RUN export PS1='$(whoami)@arc42-docker-container-$(hostname):$(pwd) >'
 
-#CMD ["./update-subtle-ads.sh"]
-CMD ["/bin/bash"]
+CMD ["./update-submodules-in-container.sh"]
