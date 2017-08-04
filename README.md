@@ -66,8 +66,7 @@ docker build --tag arc42-ads:auto .
 ```
 docker run --interactive --tty arc42-ads:auto
 ```
-
-The container needs to run in interactive mode,
+  The container needs to run in interactive mode,
 as it prompts for a github username and
 credentials. In case of 2-factor-auth,
 you need to provide your personal access token,
