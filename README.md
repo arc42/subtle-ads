@@ -46,15 +46,16 @@ git push
 I defined a container based upon Alpine linux
 (see `Dockerfile` in this repo):
 
-'''Docker
+```Docker
 FROM alpine:3.6
 
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh
-'''
+# ...
+```
 
 In short:
-* Alpine 3.6 based container
+* [Alpine 3.6](https://alpinelinux.org/) based container
 * Installs git
 
 1. Building the container:
@@ -69,8 +70,10 @@ docker run --interactive --tty arc42-ads:auto
   The container needs to run in interactive mode,
 as it prompts for a github username and
 credentials. In case of 2-factor-auth,
-you need to provide your personal access token,
+you need to provide your
+[personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/),
 otherwise your password will suffice.
+
 
 3. What the container does...
 is pretty simple: read the script
@@ -80,11 +83,12 @@ you'll understand.
 ### Concerned arc42 Repositories
 
 Updating ads concerns (at least) the following arc42 sites:
-  * [docs.arc2.org](http://docs.arc42.org) with repository [github.com/arc42/docs.arc42.org-site](https://github.com/arc42/docs.arc42.org-site)
+  * [docs.arc2.org](http://docs.arc42.org) with repository https://github.com/arc42/docs.arc42.org-site
   * [faq.arc42.org](http://faq.arc42.org) with repository
-  [https://github.com/arc42/faq.arc42.org-site](https://github.com/arc42/faq.arc42.org-site)
-  * [patterns.arc42.org](http://patterns.arc42.org) with repository [https://github.com/arc42/patterns.arc42.org-site](https://github.com/arc42/patterns.arc42.org-site)
-  * [arc42.org](https://github.com/arc42/arc42.org-site)
+  https://github.com/arc42/faq.arc42.org-site
+  * [patterns.arc42.org](http://patterns.arc42.org) with repository https://github.com/arc42/patterns.arc42.org-site
+  * [arc42.org](https://github.com/arc42/arc42.org-site) with repository
+  https://github.com/arc42/arc42.org-site)
 
 
 
