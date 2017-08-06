@@ -42,15 +42,15 @@ function update_submodule() {
    echo
    echo "updating $1"
    echo "========================================="
-   echo "git clone..."
+   echo "******* clone...:"
    git clone --recursive https://github.com/arc42/$1
    cd $1
-   echo "update submodule..."
+   echo "******* update submodule...:"
    git submodule update --remote
    git add .
-   echo "commit..."
+   echo "******* commit...:"
    git commit -m "updated subtle-ads $(date +%Y-%m-%d) from Docker container"
-   echo "push to Github"
+   echo "******* push to Github...:"
    git push https://$authuser@github.com/arc42/$1.git
    cd ..
 }
