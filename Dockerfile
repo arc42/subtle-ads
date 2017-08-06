@@ -5,9 +5,9 @@
 FROM alpine:3.6
 
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh
+    apk add --no-cache bash git openssh ncurses
 
-LABEL version="0.8.4"
+LABEL version="1.0.0"
 LABEL description="updates subtle-ads on arc42 websites: \
 (1) clone the respective repos and\
 (2) update the submodules within.\
