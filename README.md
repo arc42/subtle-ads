@@ -57,15 +57,16 @@ RUN apk update && apk upgrade && \
 In short:
 * [Alpine 3.6](https://alpinelinux.org/) based container
 * Installs git
+* Installs ncurses (to enable colored output)
 
 1. Building the container:
 ```
-docker build --tag subtle-ads:auto .
+docker build --tag subtle-ads .
 ```
 
 2. Running the container:
 ```
-docker run --interactive --tty --rm subtle-ads:auto
+docker run --interactive --tty --rm subtle-ads
 ```
   The container needs to run in interactive mode,
 as it prompts for a github username and
