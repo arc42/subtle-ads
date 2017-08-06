@@ -60,12 +60,12 @@ In short:
 
 1. Building the container:
 ```
-docker build --tag arc42-ads:auto .
+docker build --tag subtle-ads:auto .
 ```
 
 2. Running the container:
 ```
-docker run --interactive --tty arc42-ads:auto
+docker run --interactive --tty --rm subtle-ads:auto
 ```
   The container needs to run in interactive mode,
 as it prompts for a github username and
