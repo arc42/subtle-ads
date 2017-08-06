@@ -1,4 +1,6 @@
 #! /bin/bash
+#
+#
 
 faqsite="faq.arc42.org-site"
 docsite="docs.arc42.org-site"
@@ -7,24 +9,38 @@ mainsite="arc42.org-site"
 
 sites=( $faqsite $docsite $patternsite $mainsite)
 
+# some colors to highlight certain output
+GREEN=`tput setaf 2`
+RED=`tput setaf 5`
+BLUE=`tput setaf 4`
+RESET=`tput sgr0`
+
 clear
+
 echo
 echo "arc42 Docker container to update subtle-ads on the arc42.org websites:"
 echo "======================================================================"
 echo
-for i in ${sites[@]}; do echo $i; done
+echo ${GREEN}
+for i in ${sites[@]}; do echo  $i ; done
+echo ${RESET}
 echo "======================================================================"
 echo
 
-echo "I need github credentials to push changes. In case you copy/paste,"
+echo "I need ${GREEN} github credentials ${RESET} to push changes. In case you copy/paste,"
 echo "please use the paste-command from the context menu of your terminal."
 echo
-read -p "Enter github username (with push access to arc42 repositories) : " username
-read -p "Enter github credentials (personal access token) : " credential
+read -p "Enter github ${GREEN} username ${RESET}(with push access to arc42 repositories) : " username
+read -p "Enter github ${GREEN} credentials (personal access token)${RESET} : " credential
 
 authuser=$username:$credential
 
-echo "Thanx. Now using $authuser to authenticate at github."
+if [[ -z $username ]] ; then
+    echo "empty username won't work. Aborted!"
+    exit 1
+fi
+
+echo "Thanx. Now using ${RED} ${authuser} ${RESET}to authenticate at github."
 echo
 
 
@@ -40,17 +56,17 @@ echo "$dirname" created
 # $2 the github credentials (username:password)
 function update_submodule() {
    echo
-   echo "updating $1"
+   echo "updating ${BLUE} $1 ${RESET}"
    echo "========================================="
-   echo "******* clone...:"
+   echo "${BLUE}******* clone...:${RESET}"
    git clone --recursive https://github.com/arc42/$1
    cd $1
-   echo "******* update submodule...:"
+   echo "${BLUE}******* update submodule...:${RESET}"
    git submodule update --remote
    git add .
-   echo "******* commit...:"
+   echo "${BLUE}******* commit...:${RESET}"
    git commit -m "updated subtle-ads $(date +%Y-%m-%d) from Docker container"
-   echo "******* push to Github...:"
+   echo "${BLUE}******* push to Github...:${RESET}"
    git push https://$authuser@github.com/arc42/$1.git
    cd ..
 }
