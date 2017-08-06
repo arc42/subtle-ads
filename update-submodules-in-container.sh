@@ -12,7 +12,6 @@ sites=( $faqsite $docsite $patternsite $mainsite)
 # some colors to highlight certain output
 GREEN=`tput setaf 2`
 RED=`tput setaf 5`
-BLUE=`tput setaf 4`
 RESET=`tput sgr0`
 
 clear
@@ -30,8 +29,8 @@ echo
 echo "I need ${GREEN} github credentials ${RESET} to push changes. In case you copy/paste,"
 echo "please use the paste-command from the context menu of your terminal."
 echo
-read -p "Enter github ${GREEN} username ${RESET}(with push access to arc42 repositories) : " username
-read -p "Enter github ${GREEN} credentials (personal access token)${RESET} : " credential
+read -p "Enter github ${RED} username ${RESET}(with push access to arc42 repositories) : " username
+read -p "Enter github ${RED} credentials (personal access token)${RESET} : " credential
 
 authuser=$username:$credential
 
@@ -56,17 +55,17 @@ echo "$dirname" created
 # $2 the github credentials (username:password)
 function update_submodule() {
    echo
-   echo "updating ${BLUE} $1 ${RESET}"
+   echo "updating ${GREEN} $1 ${RESET}"
    echo "========================================="
-   echo "${BLUE}******* clone...:${RESET}"
+   echo "${GREEN}******* clone...:${RESET}"
    git clone --recursive https://github.com/arc42/$1
    cd $1
-   echo "${BLUE}******* update submodule...:${RESET}"
+   echo "${GREEN}******* update submodule...:${RESET}"
    git submodule update --remote
    git add .
-   echo "${BLUE}******* commit...:${RESET}"
+   echo "${GREEN}******* commit...:${RESET}"
    git commit -m "updated subtle-ads $(date +%Y-%m-%d) from Docker container"
-   echo "${BLUE}******* push to Github...:${RESET}"
+   echo "${GREEN}******* push to Github...:${RESET}"
    git push https://$authuser@github.com/arc42/$1.git
    cd ..
 }
