@@ -2,4 +2,7 @@
 
 echo off
 
-docker run --interactive --tty arc42-ads:auto
+# uncomment, if you need build the container image
+# docker build --tag subtle-ads:auto .
+
+docker run --interactive --tty --rm subtle-ads:auto
