@@ -10,6 +10,9 @@ These ads simply announce the dates of our upcoming public trainings, sometimes 
 
 ## How to ...
 
+* build the container, if not already done (see below)
+* run the script `update-subtle-ads.sh`
+
 
 ## How does it work?
 
