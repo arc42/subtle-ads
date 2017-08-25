@@ -8,6 +8,9 @@ therefore we include (very subtle, silent, low-voiced, unobtrusive) ads in the a
 
 These ads simply announce the dates of our upcoming public trainings, sometimes presentations or similar.
 
+## How to ...
+
+
 ## How does it work?
 
 **Short answer**: Via [git submodules](https://git-scm.com/docs/git-submodule)
