@@ -28,6 +28,7 @@ echo
 
 echo "I need ${GREEN} github credentials ${RESET} to push changes. In case you copy/paste,"
 echo "please use the paste-command from the context menu of your terminal."
+echo "Username $RED MUST NOT$RESET be an email address!"
 echo
 read -p "Enter github ${RED} username ${RESET}(with push access to arc42 repositories) : " username
 read -p "Enter github ${RED} credentials (personal access token)${RESET} : " credential
