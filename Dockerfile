@@ -18,8 +18,8 @@ COPY update-submodules-in-container.sh /update-submodules-in-container.sh
 RUN chmod +x /update-submodules-in-container.sh
 
 # ensure git actions are attributed
-RUN git config --global user.email "gs@gernotstarke.de"
-RUN git config --global user.name "arc42 update-ads Docker container"
+RUN git config --global user.email "gs@gernotstarke.de" && \
+    git config --global user.name "arc42 update-ads Docker container"
 
 # in case interactive sessions will be used, set decent prompt
 # RUN export PS1='$(whoami)@arc42-docker-container-$(hostname):$(pwd) >'
