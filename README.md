@@ -89,10 +89,10 @@ you'll understand.
 ### Concerned arc42 Repositories
 
 Updating ads concerns (at least) the following arc42 sites:
-  * [docs.arc2.org](http://docs.arc42.org) with repository https://github.com/arc42/docs.arc42.org-site
-  * [faq.arc42.org](http://faq.arc42.org) with repository
+  * [docs.arc2.org](https://docs.arc42.org) with repository https://github.com/arc42/docs.arc42.org-site
+  * [faq.arc42.org](https://faq.arc42.org) with repository
   https://github.com/arc42/faq.arc42.org-site
-  * [patterns.arc42.org](http://patterns.arc42.org) with repository https://github.com/arc42/patterns.arc42.org-site
+  * [patterns.arc42.org](https://patterns.arc42.org) with repository https://github.com/arc42/patterns.arc42.org-site
   * [arc42.org](https://github.com/arc42/arc42.org-site) with repository
   https://github.com/arc42/arc42.org-site)
 
