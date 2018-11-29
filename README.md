@@ -34,7 +34,7 @@ git submodule add https://github.com/arc42/subtle-ads/
 4. Then add the submodule to git by
 ```bash
 cd ..
-git add .gitmodules _includes/subtle-ads.html
+git add .gitmodules _includes/subtle-ads
 ```
 
 5. When updating the ad, I have to pull
