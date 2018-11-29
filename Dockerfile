@@ -7,15 +7,15 @@ FROM alpine:3.6
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh ncurses
 
-LABEL version="1.0.0"
+LABEL version="1.1.0"
 LABEL description="updates subtle-ads on arc42 websites: \
 (1) clone the respective repos and\
 (2) update the submodules within.\
 (3) commit and push, which\
 (4) initiates re-generation of github-pages."
 
-COPY update-submodules-in-container.sh /update-ads-on-sites-called-by-container.sh
-RUN chmod +x /update-submodules-in-container.sh
+COPY update-ads-in-container.sh /update-ads-in-container.sh
+RUN chmod +x /update-ads-in-container.sh
 
 # ensure git actions are attributed
 RUN git config --global user.email "gs@gernotstarke.de" && \
@@ -24,4 +24,4 @@ RUN git config --global user.email "gs@gernotstarke.de" && \
 # in case interactive sessions will be used, set decent prompt
 # RUN export PS1='$(whoami)@arc42-docker-container-$(hostname):$(pwd) >'
 
-CMD ["./update-ads-on-sites-called-by-container.sh"]
+CMD ["./update-ads-in-container.sh"]
