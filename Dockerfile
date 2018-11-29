@@ -24,4 +24,4 @@ RUN git config --global user.email "gs@gernotstarke.de" && \
 # in case interactive sessions will be used, set decent prompt
 # RUN export PS1='$(whoami)@arc42-docker-container-$(hostname):$(pwd) >'
 
-CMD ["./update-submodules-in-container.sh"]
+CMD ["./update-ads-on-sites-called-by-container.sh"]
