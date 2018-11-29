@@ -14,7 +14,7 @@ LABEL description="updates subtle-ads on arc42 websites: \
 (3) commit and push, which\
 (4) initiates re-generation of github-pages."
 
-COPY update-submodules-in-container.sh /update-submodules-in-container.sh
+COPY update-submodules-in-container.sh /update-ads-on-sites-called-by-container.sh
 RUN chmod +x /update-submodules-in-container.sh
 
 # ensure git actions are attributed

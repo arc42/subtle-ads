@@ -6,8 +6,9 @@ faqsite="faq.arc42.org-site"
 docsite="docs.arc42.org-site"
 patternsite="patterns.arc42.org-site"
 mainsite="arc42.org-site"
+kniggesite="softwareknigge.de"
 
-sites=( $faqsite $docsite $patternsite $mainsite)
+sites=( $faqsite $docsite $patternsite $mainsite $kniggesite)
 
 # some colors to highlight certain output
 GREEN=`tput setaf 2`

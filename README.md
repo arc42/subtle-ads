@@ -83,7 +83,7 @@ otherwise your password will suffice.
 
 3. What the container does...
 is pretty simple: read the script
-`update-submodules-in-container.sh`,
+`update-ads-on-sites.sh`,
 you'll understand.
 
 ### Concerned arc42 Repositories
@@ -95,6 +95,7 @@ Updating ads concerns (at least) the following arc42 sites:
   * [patterns.arc42.org](https://patterns.arc42.org) with repository https://github.com/arc42/patterns.arc42.org-site
   * [arc42.org](https://github.com/arc42/arc42.org-site) with repository
   https://github.com/arc42/arc42.org-site)
+  * [softwareknigge.de](https://softwareknigge.de) with repository https://github.com/gernotstarke/softwareknigge.de-site
 
 
 
