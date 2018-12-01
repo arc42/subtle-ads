@@ -2,6 +2,10 @@
 #
 # this is the script that shall be run in the docker container
 # see the Dockerfile
+#
+#                     vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+# IF YOU MODIFY HERE, you need to re-build the container!!
+#                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 faqsite="arc42/faq.arc42.org-site"
 docsite="arc42/docs.arc42.org-site"
@@ -9,8 +13,7 @@ patternsite="arc42/patterns.arc42.org-site"
 mainsite="arc42/arc42.org-site"
 kniggesite="gernotstarke/softwareknigge.de-site"
 
-# sites=( $faqsite $docsite $patternsite $mainsite $kniggesite)
-sites=( $kniggesite)
+sites=( $faqsite $docsite $patternsite $mainsite $kniggesite)
 
 # some colors to highlight certain output
 GREEN=`tput setaf 2`
@@ -55,19 +58,24 @@ echo "$dirname" created
 
 # performs all updates of an arc42 site
 # parameters:
-# $1 github-repository-name,
+# $1 github-repository-name (including the org-part),
 # $2 the github credentials (username:password)
 function update_submodule() {
+   echo "currently in directory $pwd"
    echo
    echo "updating ${GREEN} $1 ${RESET}"
    echo "========================================="
    echo "${GREEN}******* clone...:${RESET}"
    git clone --recursive https://github.com/$1
-   cd $1
+
+   repo=$( echo "$1" |cut -d'/' -f2 ) # get repository-part of URL
+   cd $repo
+
+
    echo "${GREEN}******* update submodule...:${RESET}"
    git submodule update --remote
    git add .
-   echo "${GREEN}******* commit...:${RESET}"
+   echo "${GREEN}******* commit updated ads...:${RESET}"
    git commit -m "updated subtle-ads $(date +%Y-%m-%d) from Docker container"
    echo "${GREEN}******* push to Github...:${RESET}"
    git push https://$authuser@github.com/$1.git
