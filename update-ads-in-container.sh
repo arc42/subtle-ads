@@ -2,11 +2,11 @@
 #
 #
 
-faqsite="faq.arc42.org-site"
-docsite="docs.arc42.org-site"
-patternsite="patterns.arc42.org-site"
-mainsite="arc42.org-site"
-kniggesite="softwareknigge.de"
+faqsite="arc42/faq.arc42.org-site"
+docsite="arc42/docs.arc42.org-site"
+patternsite="arc42/patterns.arc42.org-site"
+mainsite="arc42/arc42.org-site"
+kniggesite="gernotstarke/softwareknigge.de-site"
 
 sites=( $faqsite $docsite $patternsite $mainsite $kniggesite)
 
@@ -60,7 +60,7 @@ function update_submodule() {
    echo "updating ${GREEN} $1 ${RESET}"
    echo "========================================="
    echo "${GREEN}******* clone...:${RESET}"
-   git clone --recursive https://github.com/arc42/$1
+   git clone --recursive https://github.com/$1
    cd $1
    echo "${GREEN}******* update submodule...:${RESET}"
    git submodule update --remote
@@ -68,7 +68,7 @@ function update_submodule() {
    echo "${GREEN}******* commit...:${RESET}"
    git commit -m "updated subtle-ads $(date +%Y-%m-%d) from Docker container"
    echo "${GREEN}******* push to Github...:${RESET}"
-   git push https://$authuser@github.com/arc42/$1.git
+   git push https://$authuser@github.com/$1.git
    cd ..
 }
 
