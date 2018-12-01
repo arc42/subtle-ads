@@ -11,7 +11,7 @@ These ads simply announce the dates of our upcoming public trainings, sometimes 
 ## How to ...
 
 * build the container, if not already done (see below)
-* run the script `update-subtle-ads.sh`
+* run the script `run-container.sh`
 
 
 ## How does it work?
@@ -83,7 +83,7 @@ otherwise your password will suffice.
 
 3. What the container does...
 is pretty simple: read the script
-`update-ads-on-sites.sh`,
+`update-ads-in-container.sh`,
 you'll understand.
 
 ### Concerned arc42 Repositories
