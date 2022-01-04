@@ -14,7 +14,7 @@ mainsite="arc42/arc42.org-site"
 kniggesite="gernotstarke/softwareknigge.de-site"
 gssite="gernotstarke/gernotstarke.de-site"
 
-sites=( $faqsite $docsite $patternsite $mainsite $kniggesite gssite)
+sites=( $faqsite $docsite $patternsite $mainsite $kniggesite $gssite)
 
 # some colors to highlight certain output
 GREEN=`tput setaf 2`
