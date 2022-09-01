@@ -14,7 +14,8 @@ mainsite="arc42/arc42.org-site"
 kniggesite="gernotstarke/softwareknigge.de-site"
 gssite="gernotstarke/gernotstarke.de-site"
 
-sites=( $faqsite $docsite $patternsite $mainsite $kniggesite $gssite)
+#sites=( $faqsite $docsite $patternsite $mainsite $kniggesite $gssite)
+sites=( $faqsite $docsite )
 
 # some colors to highlight certain output
 GREEN=`tput setaf 2`
@@ -74,6 +75,7 @@ function update_submodule() {
 
 
    echo "${GREEN}******* update submodule...:${RESET}"
+   git submodule set-branch --branch main _includes/subtle-ads
    git submodule update --remote
    git add .
    echo "${GREEN}******* commit updated ads...:${RESET}"
