@@ -75,7 +75,7 @@ function update_submodule() {
 
 
    echo "${GREEN}******* update submodule...:${RESET}"
-   git submodule set-branch --branch main _includes/subtle-ads
+   # git submodule set-branch --branch main _includes/subtle-ads
    git submodule update --remote
    git add .
    echo "${GREEN}******* commit updated ads...:${RESET}"
