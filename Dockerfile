@@ -2,7 +2,7 @@
 ###########################################################
 
 # minimal linux
-FROM alpine:3.6
+FROM alpine:3.17
 
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh ncurses
