@@ -10,9 +10,11 @@
 faqsite="arc42/faq.arc42.org-site"
 docsite="arc42/docs.arc42.org-site"
 patternsite="arc42/patterns.arc42.org-site"
+qualitysite="arc42/quality.arc42.org-site"
 mainsite="arc42/arc42.org-site"
 kniggesite="gernotstarke/softwareknigge.de-site"
 gssite="gernotstarke/gernotstarke.de-site"
+
 
 #sites=( $faqsite $docsite $patternsite $mainsite $kniggesite $gssite)
 sites=( $faqsite $docsite $patternsite $mainsite $kniggesite $gssite)
