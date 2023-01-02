@@ -11,7 +11,7 @@ These ads simply announce the dates of our upcoming public trainings, sometimes 
 ## How to ...
 
 * build the container, if not already done (see below)
-* run the script `run-container.sh`
+* run the script `run-this-locally.sh`
 
 
 ## How does it work?
@@ -53,14 +53,14 @@ I defined a container based upon Alpine linux
 (see `Dockerfile` in this repo):
 
 ```Docker
-FROM alpine:3.6
+FROM alpine:3.17
 
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh
 ```
 
 In short:
-* [Alpine 3.6](https://alpinelinux.org/) based container
+* [Alpine 3.17](https://alpinelinux.org/) based container
 * Installs git
 * Installs ncurses (to enable colored output)
 
@@ -92,6 +92,7 @@ Updating ads concerns (at least) the following arc42 sites:
   * [docs.arc2.org](https://docs.arc42.org) with repository https://github.com/arc42/docs.arc42.org-site
   * [faq.arc42.org](https://faq.arc42.org) with repository
   https://github.com/arc42/faq.arc42.org-site
+  * [quality.arc42.org](https://quality.arc42.org)
   * [patterns.arc42.org](https://patterns.arc42.org) with repository https://github.com/arc42/patterns.arc42.org-site
   * [arc42.org](https://github.com/arc42/arc42.org-site) with repository
   https://github.com/arc42/arc42.org-site)
