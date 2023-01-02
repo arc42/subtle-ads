@@ -103,4 +103,4 @@ Updating ads concerns (at least) the following arc42 sites:
 As the official git documentation is quite hard to understand, I used several additional sources:
 
 * [Pavel Šimerda on Stackoverflow](https://stackoverflow.com/questions/15844542/git-symlink-reference-to-a-file-in-an-external-repository/27770463#27770463)
-* [Payne Digitals Intro to Git Submodules](http://paynedigital.com/articles/2011/10/introduction-to-git-submodules)
+* [Payne Digitals Intro to Git Submodules](https://paynedigital.com/articles/2011/10/introduction-to-git-submodules)
